@@ -37,6 +37,8 @@ RUN docker-php-ext-install gd
 #install nodejs
 RUN apt-get update && apt-get install -y nodejs npm
 
+RUN npm install --global yarn
+
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
