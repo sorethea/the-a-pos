@@ -88,6 +88,10 @@ import BaseUnits from "./components/base-unit/BaseUnits";
 import RegisterReport from "./components/report/registerReport/RegisterReport";
 import Variation from "./components/variation/Variation";
 import ReceiptSettings from "./components/settings/ReceiptSettings";
+import CreateStore from "./components/store/CreateStore";
+import EditStore from "./components/store/EditStore";
+import StoreDetail from "./components/store/StoreDetail";
+import Stores from "./components/store/Stores";
 
 export const route = [
     {
@@ -104,6 +108,26 @@ export const route = [
         path: "currencies",
         ele: <Currencies />,
         permission: Permissions.MANAGE_CURRENCY,
+    },
+    {
+        path: "stores",
+        ele: <Stores />,
+        permission: Permissions.MANAGE_STORES,
+    },
+    {
+        path: "store/create",
+        ele: <CreateStore />,
+        permission: Permissions.MANAGE_STORES,
+    },
+    {
+        path: "store/edit/:id",
+        ele: <EditStore />,
+        permission: Permissions.MANAGE_STORES,
+    },
+    {
+        path: "store/detail/:id",
+        ele: <StoreDetail />,
+        permission: Permissions.MANAGE_STORES,
     },
     {
         path: "warehouse",

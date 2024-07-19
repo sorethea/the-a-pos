@@ -37,6 +37,7 @@ function App() {
         manage_roles: "/app/roles",
         manage_brands: "/app/brands",
         manage_warehouses: "/app/warehouses",
+        manage_stores: "/app/stores",
         manage_units: "/app/units",
         manage_product_categories: "/app/product-categories",
         manage_products: "/app/products",

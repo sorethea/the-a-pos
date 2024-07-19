@@ -31,6 +31,7 @@ import {
     faLanguage,
     faShieldHalved,
     faLayerGroup,
+    faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { getFormattedMessage } from "../shared/sharedMethod";
 
@@ -330,6 +331,20 @@ export default [
             {
                 title: getFormattedMessage("warehouse.title"),
                 to: "/app/warehouse",
+            },
+        ],
+    },
+    {
+        title: "stores.title",
+        name: "stores",
+        fontIcon: <FontAwesomeIcon icon={faStore} />,
+        to: "/app/stores",
+        class: "d-flex",
+        permission: Permissions.MANAGE_STORES,
+        items: [
+            {
+                title: getFormattedMessage("stores.title"),
+                to: "/app/stores",
             },
         ],
     },

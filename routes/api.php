@@ -403,6 +403,11 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Coupon Code Routes
     Route::resource('coupon-codes', CouponCodeAPIController::class);
+
+    //Store
+
+    Route::resource('stores', App\Http\Controllers\API\StoreAPIController::class)
+        ->except(['create', 'edit']);
 });
 
 Route::post('login', [AuthController::class, 'login'])->name('login');

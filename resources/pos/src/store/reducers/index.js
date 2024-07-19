@@ -99,6 +99,7 @@ import posCloseRegisterDetailsReducer from "./pos/posCloseRegisterDetailsReducer
 import posRegisterReportDetailsReducer from "./pos/posRegisterReportDetailsReducer";
 import variationReducer from "./variationReducer";
 import receiptSettingsReducer from "./receiptSettingsReducer";
+import storeReducrs from "./storeReducrs";
 
 export default combineReducers({
     loginUser: loginReducers,
@@ -108,6 +109,7 @@ export default combineReducers({
     currencies: currencyReducer,
     roles: roleReducer,
     permissions: permissionReducer,
+    stores: storeReducrs,
     warehouses: warehouseReducer,
     productCategories: productCategoryReducers,
     variations: variationReducer,

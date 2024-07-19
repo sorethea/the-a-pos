@@ -9,6 +9,7 @@ export const apiBaseURL = {
     LANGUAGES: "/languages",
     PERMISSION: "/permissions",
     WAREHOUSES: "/warehouses",
+    STORES: "/stores",
     UNITS: "/units",
     BASE_UNITS: "/base-units",
     SUPPLIERS: "/suppliers",
@@ -162,6 +163,16 @@ export const settingActionType = {
     EDIT_RECEIPT_SETTINGS: "EDIT_RECEIPT_SETTINGS",
 };
 
+export const storeActionType = {
+    FETCH_STORES: "FETCH_STORES",
+    FETCH_STORE: "STORE",
+    ADD_STORE: "ADD_STORE",
+    EDIT_STORE: "EDIT_STORE",
+    DELETE_STORE: "DELETE_STORE",
+    FETCH_ALL_STORES: "FETCH_ALL_STORES",
+    //FETCH_STORE_REPORT: "FETCH_STORE_REPORT",
+    FETCH_STORE_DETAILS: "FETCH_STORE_DETAILS",
+};
 export const warehouseActionType = {
     FETCH_WAREHOUSES: "FETCH_WAREHOUSES",
     FETCH_WAREHOUSE: "WAREHOUSE",
@@ -588,6 +599,8 @@ export const Permissions = {
     MANAGE_SMS_API: "manage_sms_apis",
     MANAGE_SMS_TEMPLATES: "manage_sms_templates",
     MANAGE_LANGUAGES: "manage_language",
+    MANAGE_STORES: "manage_stores"
+
 };
 
 //POS Screen Constants

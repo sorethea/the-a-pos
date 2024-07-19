@@ -728,11 +728,11 @@ const PosMainPage = (props) => {
                                     brandId={brandId}
                                     selectedOption={selectedOption}
                                 />
-                                <Brands
-                                    categoryId={categoryId}
-                                    setBrand={setBrand}
-                                    selectedOption={selectedOption}
-                                />
+                                {/*<Brands*/}
+                                {/*    categoryId={categoryId}*/}
+                                {/*    setBrand={setBrand}*/}
+                                {/*    selectedOption={selectedOption}*/}
+                                {/*/>*/}
                             </div>
                             <Product
                                 cartProducts={updateProducts}
