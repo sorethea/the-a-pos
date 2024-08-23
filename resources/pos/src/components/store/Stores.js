@@ -40,6 +40,7 @@ const Stores = (props ) => {
         name: store.attributes.name,
         phone: store.attributes.phone,
         address: store.attributes.address,
+        created_at: store.attributes.created_at,
         id: store.id
     } ) );
 

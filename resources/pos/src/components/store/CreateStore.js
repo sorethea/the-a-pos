@@ -18,7 +18,7 @@ const CreateStore = (props) => {
 
     return (
         <MasterLayout>
-            <HeaderTitle title={getFormattedMessage('store.create.title')} to='/app/store'/>
+            <HeaderTitle title={getFormattedMessage('store.create.title')} to='/app/stores'/>
             <StoreForm addStoreData={addStoreData}/>
         </MasterLayout>
     )

@@ -25,7 +25,7 @@ class UpdateStoreAPIRequest extends APIRequest
     public function rules()
     {
         $rules = Store::$rules;
-        $rules['name'] = $rules['name'].",".$this->route("store");
+        $rules['name'] = 'required|unique:stores,name,'.$this->route('stores');
         return $rules;
     }
 }

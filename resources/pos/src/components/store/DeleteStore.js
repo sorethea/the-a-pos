@@ -1,23 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {deleteWarehouse} from '../../store/action/warehouseAction';
+import {deleteStore} from '../../store/action/storeAction';
 import DeleteModel from '../../shared/action-buttons/DeleteModel';
 import {getFormattedMessage} from '../../shared/sharedMethod';
 
 const DeleteStore = (props) => {
-    const {deleteWarehouse, onDelete, deleteModel, onClickDeleteModel} = props;
+    const {deleteStore, onDelete, deleteModel, onClickDeleteModel} = props;
 
     const deleteUserClick = () => {
-        deleteWarehouse(onDelete.id);
+        deleteStore(onDelete.id);
         onClickDeleteModel(false);
     };
 
     return (
         <div>
             {deleteModel && <DeleteModel onClickDeleteModel={onClickDeleteModel} deleteModel={deleteModel}
-                                         deleteUserClick={deleteUserClick} name={getFormattedMessage('warehouse.title')}/>}
+                                         deleteUserClick={deleteUserClick} name={getFormattedMessage('store.title')}/>}
         </div>
     )
 };
 
-export default connect(null, {deleteWarehouse})(DeleteStore);
+export default connect(null, {deleteStore})(DeleteStore);

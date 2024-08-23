@@ -24,20 +24,6 @@ class StoreAPIController extends AppBaseController
         $this->storeRepository = $storeRepo;
     }
 
-    /**
-     * Display a listing of the Stores.
-     * GET|HEAD /stores
-     */
-//    public function index(Request $request): JsonResponse
-//    {
-//        $stores = $this->storeRepository->all(
-//            $request->except(['skip', 'limit']),
-//            $request->get('skip'),
-//            $request->get('limit')
-//        );
-//
-//        return $this->sendResponse($stores->toArray(), 'Stores retrieved successfully');
-//    }
     public function index(Request $request): StoreCollection
     {
         $perPage = getPageSize($request);
@@ -50,49 +36,37 @@ class StoreAPIController extends AppBaseController
      * Store a newly created Store in storage.
      * POST /stores
      */
-    public function store(CreateStoreAPIRequest $request): JsonResponse
+    public function store(CreateStoreAPIRequest $request): StoreResource
     {
         $input = $request->all();
 
         $store = $this->storeRepository->create($input);
 
-        return $this->sendResponse($store->toArray(), 'Store saved successfully');
+        return new StoreResource($store);
     }
-
     /**
      * Display the specified Store.
      * GET|HEAD /stores/{id}
      */
-    public function show($id): JsonResponse
+    public function show($id): StoreResource
     {
         /** @var Store $store */
         $store = $this->storeRepository->find($id);
 
-        if (empty($store)) {
-            return $this->sendError('Store not found');
-        }
-
-        return $this->sendResponse($store->toArray(), 'Store retrieved successfully');
+        return new StoreResource($store);
     }
 
     /**
      * Update the specified Store in storage.
      * PUT/PATCH /stores/{id}
      */
-    public function update($id, UpdateStoreAPIRequest $request): JsonResponse
+    public function update(UpdateStoreAPIRequest $request,$id): StoreResource
     {
         $input = $request->all();
 
-        /** @var Store $store */
-        $store = $this->storeRepository->find($id);
-
-        if (empty($store)) {
-            return $this->sendError('Store not found');
-        }
-
         $store = $this->storeRepository->update($input, $id);
 
-        return $this->sendResponse($store->toArray(), 'Store updated successfully');
+        return new StoreResource($store);
     }
 
     /**

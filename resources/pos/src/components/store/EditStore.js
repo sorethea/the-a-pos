@@ -1,44 +1,43 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { fetchWarehouse } from '../../store/action/warehouseAction';
-import WarehouseForm from './StoreForm';
+import { fetchStore } from '../../store/action/storeAction';
+import StoreForm from './StoreForm';
 import HeaderTitle from '../header/HeaderTitle';
 import MasterLayout from '../MasterLayout';
 import { getFormattedMessage } from '../../shared/sharedMethod';
 import TopProgressBar from "../../shared/components/loaders/TopProgressBar";
 
-const EditStore = (props ) => {
-    const { fetchWarehouse, warehouses } = props;
+const EditStore = ( props ) => {
+    const { fetchStore, stores } = props;
     const { id } = useParams();
 
     useEffect( () => {
-        fetchWarehouse( id );
+        fetchStore( id );
     }, [] );
 
-    const itemsValue = warehouses && warehouses.length === 1 && warehouses.map( warehouse => ( {
-        name: warehouse.attributes.name,
-        phone: warehouse.attributes.phone,
-        country: warehouse.attributes.country,
-        city: warehouse.attributes.city,
-        email: warehouse.attributes.email,
-        zip_code: warehouse.attributes.zip_code,
-        id: warehouse.id
+    const itemsValue = stores && stores.length === 1 && stores.map( store => ( {
+        name: store.attributes.name,
+        phone: store.attributes.phone,
+        address: store.attributes.address,
+        location: store.attributes.location,
+        created_at: store.attributes.created_at,
+        id: store.id
     } ) );
 
     return (
         <MasterLayout>
             <TopProgressBar />
-            <HeaderTitle title={getFormattedMessage( 'warehouse.edit.title' )} to='/app/warehouse' />
-            {warehouses.length === 1 && <WarehouseForm singleWarehouse={itemsValue} id={id} />}
+            <HeaderTitle title={getFormattedMessage( 'store.edit.title' )} to='/app/stores' />
+            {stores.length === 1 && <StoreForm singleStore={itemsValue} id={id} />}
         </MasterLayout>
     )
 };
 
 const mapStateToProps = ( state ) => {
-    const { warehouses } = state;
-    return { warehouses }
+    const { stores } = state;
+    return { stores }
 };
 
-export default connect( mapStateToProps, { fetchWarehouse } )( EditStore );
+export default connect( mapStateToProps, { fetchStore } )( EditStore );
 

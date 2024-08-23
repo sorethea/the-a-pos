@@ -31,7 +31,6 @@ export const fetchStores =
         apiConfig
             .get(url)
             .then((response) => {
-                console.log(response.data.data)
                 dispatch({
                     type: storeActionType.FETCH_STORES,
                     payload: response.data.data,
@@ -68,7 +67,7 @@ export const fetchStore =
             .get(apiBaseURL.STORES + "/" + storeId)
             .then((response) => {
                 dispatch({
-                    type: storeActionType.FETCH_STORES,
+                    type: storeActionType.FETCH_STORE,
                     payload: response.data.data,
                 });
                 if (isLoading) {
@@ -130,7 +129,7 @@ export const editStore =
                         ),
                     })
                 );
-                navigate("/app/store");
+                navigate("/app/stores");
                 dispatch(setSavingButton(false));
             })
             .catch(({ response }) => {
@@ -191,10 +190,10 @@ export const fetchStoreDetails =
             dispatch(setLoading(true));
         }
         apiConfig
-            .get(apiBaseURL.STORE_DETAILS + "/" + StoreId)
+            .get(apiBaseURL.STORES + "/" + StoreId)
             .then((response) => {
                 dispatch({
-                    type: storeActionType.FETCH_STORE_DETAILS,
+                    type: storeActionType.FETCH_STORES,
                     payload: response.data.data,
                 });
                 if (isLoading) {

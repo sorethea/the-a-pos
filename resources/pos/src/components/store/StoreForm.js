@@ -15,7 +15,6 @@ const StoreForm = (props) => {
         phone: singleStore ? singleStore[0].phone : '',
         address: singleStore ? singleStore[0].address : '',
         location: singleStore ? singleStore[0].location : '',
-        description: singleStore ? singleStore[0].description : ''
     });
 
     const [errors, setErrors] = useState({
@@ -23,7 +22,6 @@ const StoreForm = (props) => {
         phone: '',
         address: '',
         location: '',
-        description: ''
     });
 
     const disabled = singleStore
@@ -31,7 +29,6 @@ const StoreForm = (props) => {
         && singleStore[0].phone === storeValue.phone
         && singleStore[0].address === storeValue.address
         && singleStore[0].location === storeValue.location
-        && singleStore[0].description === storeValue.description
 
     const handleValidation = () => {
         let errorss = {};
@@ -125,19 +122,8 @@ const StoreForm = (props) => {
                                    value={storeValue.location}/>
                             <span className='text-danger'>{errors['location'] ? errors['location'] : null}</span>
                         </div>
-                        <div className='col-md-6 mb-3'>
-                            <label className='form-label'>
-                                {getFormattedMessage('globally.input.description.label')}:
-                            </label>
-                            <span className=""/>
-                            <textarea name='description' className='form-control'
-                                   onChange={(e) => onChangeInput(e)}
-                                   value={storeValue.description}/>
-                            <span
-                                className='text-danger d-block fw-400 fs-small mt-2'>{errors['description'] ? errors['description'] : null}</span>
-                        </div>
                         <ModelFooter onEditRecord={singleStore} onSubmit={onSubmit} editDisabled={disabled}
-                                     link='/app/store' addDisabled={!storeValue.name}/>
+                                     link='/app/stores' addDisabled={!storeValue.name}/>
                     </div>
                 </Form>
             </div>

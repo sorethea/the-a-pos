@@ -165,7 +165,7 @@ export const settingActionType = {
 
 export const storeActionType = {
     FETCH_STORES: "FETCH_STORES",
-    FETCH_STORE: "STORE",
+    FETCH_STORE: "FETCH_STORE",
     ADD_STORE: "ADD_STORE",
     EDIT_STORE: "EDIT_STORE",
     DELETE_STORE: "DELETE_STORE",
