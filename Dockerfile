@@ -1,3 +1,10 @@
+FROM node:18
+
+#install nodejs
+RUN apt-get update && apt-get install -y nodejs npm@9.5.0
+
+CMD ["tail", "-f", "/dev/null"]
+
 FROM php:8.2-fpm
 
 # Copy composer.json
@@ -55,13 +62,3 @@ USER www
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
-FROM node:18
-
-#install nodejs
-RUN apt-get update && apt-get install -y nodejs npm
-
-#RUN npm install --global yarn
-
-#RUN npm install --global mix
-
-CMD ["tail", "-f", "/dev/null"]
