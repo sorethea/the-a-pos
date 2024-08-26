@@ -35,7 +35,7 @@ RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
 
 #install nodejs
-RUN apt-get update && apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y nodejs npm mix
 
 RUN npm install --global yarn
 
