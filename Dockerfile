@@ -34,7 +34,7 @@ RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath intl
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
 
-
+RUN npm install -g npm@9.5.0
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -56,9 +56,9 @@ USER www
 EXPOSE 9000
 CMD ["php-fpm"]
 
-FROM node:18
+FROM node:18.15.0
 
 #install nodejs
-RUN apt-get update && apt-get install -y nodejs npm@9.5.0
+RUN apt-get update && apt-get install -y nodejs npm
 
 CMD ["tail", "-f", "/dev/null"]
