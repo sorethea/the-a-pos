@@ -480,7 +480,7 @@
     "change-password.input.new.validate.label": "Enter new password",
     "change-password.input.confirm.validate.label": "Enter confirm password",
     "change-password.input.confirm.valid.validate.label": "The password confirmation does not match",
-    "login-form.title": "Sign In",
+    "login-form.title": "Sign In / Sign Up",
     "login-form.login-btn.label": "Login",
     "login-form.forgot-password.label": "Forgot Password ?",
     "forgot-password-form.reset-link-btn.label": "Send Password Reset Link",
