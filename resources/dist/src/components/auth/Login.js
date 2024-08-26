@@ -206,10 +206,9 @@ const Login = () => {
                                         </span>
                                     )}
                                 </button>
-                                <br/>
                                 <Link
                                     to="#"
-                                    className="link-info fs-6 text-decoration-none"
+                                    className="link-info mt-2 fs-6 text-decoration-none"
                                 >
                                     {getFormattedMessage(
                                         "login-form.register.label"
