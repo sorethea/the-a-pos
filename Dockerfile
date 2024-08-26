@@ -1,3 +1,5 @@
+FROM node:18.15.0
+
 FROM php:8.2-fpm
 
 # Copy composer.json
