@@ -39,9 +39,6 @@ services:
   node:
       image: node:18
       container_name: node
-      working_dir: /var/www
-      volumes:
-          - ./:/var/www
       depends_on:
           - 'app'
   #MySQL Service
