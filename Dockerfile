@@ -60,8 +60,8 @@ FROM node:18
 #install nodejs
 RUN apt-get update && apt-get install -y nodejs npm
 
-RUN npm install --global yarn
+#RUN npm install --global yarn
 
-RUN npm install --global mix
+#RUN npm install --global mix
 
 CMD ["tail", "-f", "/dev/null"]
