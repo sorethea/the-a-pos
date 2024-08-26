@@ -61,4 +61,7 @@ FROM node:18.15.0
 #install nodejs
 RUN apt-get update && apt-get install -y nodejs npm
 
+# Change current user to www
+USER www
+
 CMD ["tail", "-f", "/dev/null"]
