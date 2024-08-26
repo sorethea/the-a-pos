@@ -206,6 +206,7 @@ const Login = () => {
                                         </span>
                                     )}
                                 </button>
+                                <br/>
                                 <Link
                                     to="#"
                                     className="link-info fs-6 text-decoration-none"
