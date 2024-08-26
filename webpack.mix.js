@@ -32,7 +32,7 @@ mix.webpackConfig({
 
 mix.js('resources/js/app.js', 'public/js');
 
-mix.js('resources/pos/src/index.js', 'public/js/app.js').version();
+mix.js('resources/dist/src/index.js', 'public/js/app.js').version();
 mix.copyDirectory('resources/images',
     'public/images')
 

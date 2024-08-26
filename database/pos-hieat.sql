@@ -11,7 +11,7 @@
  Target Server Version : 100432
  File Encoding         : 65001
 
- Date: 16/07/2024 15:33:29
+ Date: 23/08/2024 13:54:46
 */
 
 SET NAMES utf8mb4;
@@ -695,12 +695,14 @@ CREATE TABLE `media`  (
   UNIQUE INDEX `media_uuid_unique`(`uuid`) USING BTREE,
   INDEX `media_model_type_model_id_index`(`model_type`, `model_id`) USING BTREE,
   INDEX `media_order_column_index`(`order_column`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of media
 -- ----------------------------
 INSERT INTO `media` VALUES (1, 'App\\Models\\Setting', 36, '494d64a0-7a55-417c-b508-2f2e26390dea', 'settings', 'ichiban', 'ichiban.jpg', 'image/jpeg', 'public', 'public', 212635, '[]', '[]', '[]', '[]', 1, '2024-07-11 09:31:13', '2024-07-11 09:31:13');
+INSERT INTO `media` VALUES (2, 'App\\Models\\Setting', 36, '051c6a70-bdc3-4a71-9b3f-351d5b030eed', 'settings', 'FRIED CHICKEN SPICY 5 PCS', 'FRIED-CHICKEN-SPICY-5-PCS.jpg', 'image/jpeg', 'public', 'public', 74485, '[]', '[]', '[]', '[]', 2, '2024-07-19 07:24:11', '2024-07-19 07:24:11');
+INSERT INTO `media` VALUES (3, 'App\\Models\\Setting', 36, '5050b792-b773-442a-94b1-aaf508850f3b', 'settings', 'ichiban', 'ichiban.jpg', 'image/jpeg', 'public', 'public', 212635, '[]', '[]', '[]', '[]', 3, '2024-07-19 07:25:08', '2024-07-19 07:25:08');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -711,7 +713,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 103 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -814,6 +816,8 @@ INSERT INTO `migrations` VALUES (95, '2023_12_29_065039_fill_up_main_product_tab
 INSERT INTO `migrations` VALUES (96, '2024_01_12_093843_move_product_images_to_main_product', 1);
 INSERT INTO `migrations` VALUES (97, '2024_03_01_085230_add_new_field_in_settings_table', 1);
 INSERT INTO `migrations` VALUES (98, '2024_03_13_103510_add_new_setting_value_in_settings_table', 1);
+INSERT INTO `migrations` VALUES (101, '2024_05_20_124629_add_new_field_in_settings_table', 2);
+INSERT INTO `migrations` VALUES (102, '2024_07_17_075142_create_stores_table', 2);
 
 -- ----------------------------
 -- Table structure for model_has_permissions
@@ -877,7 +881,7 @@ CREATE TABLE `permissions`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of permissions
@@ -910,6 +914,7 @@ INSERT INTO `permissions` VALUES (25, 'manage_sms_templates', 'Manage Sms Templa
 INSERT INTO `permissions` VALUES (26, 'manage_sms_apis', 'Manage Sms Apis', 'web', '2024-03-27 15:30:30', '2024-03-27 15:30:30');
 INSERT INTO `permissions` VALUES (27, 'manage_language', 'Manage Language', 'web', '2024-03-27 15:30:31', '2024-03-27 15:30:31');
 INSERT INTO `permissions` VALUES (28, 'manage_variations', 'Manage Variations', 'web', '2024-03-27 15:30:31', '2024-03-27 15:30:31');
+INSERT INTO `permissions` VALUES (29, 'manage_stores', 'Manage Stores', 'web', '2024-03-27 15:30:31', '2024-03-27 15:30:31');
 
 -- ----------------------------
 -- Table structure for personal_access_tokens
@@ -929,7 +934,7 @@ CREATE TABLE `personal_access_tokens`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `personal_access_tokens_token_unique`(`token`) USING BTREE,
   INDEX `personal_access_tokens_tokenable_type_tokenable_id_index`(`tokenable_type`, `tokenable_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of personal_access_tokens
@@ -944,6 +949,25 @@ INSERT INTO `personal_access_tokens` VALUES (13, 'App\\Models\\User', 1, 'token'
 INSERT INTO `personal_access_tokens` VALUES (14, 'App\\Models\\User', 1, 'token', '0ca7651d32f36e3c6d3b32389b862e791998afd3182357ed270a03d80cabd57f', '[\"*\"]', '2024-07-12 09:06:27', NULL, '2024-07-12 07:07:02', '2024-07-12 09:06:27');
 INSERT INTO `personal_access_tokens` VALUES (15, 'App\\Models\\User', 1, 'token', 'b08f443c1a40afdcfa2a712cfc195f41a68564c6c7c62f3a01bab7cd51eedc48', '[\"*\"]', '2024-07-12 09:10:01', NULL, '2024-07-12 09:09:59', '2024-07-12 09:10:01');
 INSERT INTO `personal_access_tokens` VALUES (16, 'App\\Models\\User', 1, 'token', 'cd65b952167cb72d3a8eb1b75db79e3cbf617e1650bb2a4641673a77db9fde64', '[\"*\"]', '2024-07-15 03:49:46', NULL, '2024-07-15 01:51:11', '2024-07-15 03:49:46');
+INSERT INTO `personal_access_tokens` VALUES (17, 'App\\Models\\User', 1, 'token', 'dc949db3d6f08b19dbffbbd39d3cd2d3cbeb960422967a0cfd65678b9b0a7da7', '[\"*\"]', '2024-07-17 09:14:18', NULL, '2024-07-17 08:40:43', '2024-07-17 09:14:18');
+INSERT INTO `personal_access_tokens` VALUES (18, 'App\\Models\\User', 1, 'token', 'b063afffd2d9c836fc34c8da673f16752d745acb2afec08a5029bea0f883a250', '[\"*\"]', '2024-07-18 04:15:17', NULL, '2024-07-18 02:17:43', '2024-07-18 04:15:17');
+INSERT INTO `personal_access_tokens` VALUES (19, 'App\\Models\\User', 1, 'token', '5a1afb5fa14203ea47138a063ffe3d2d835900bed3f5cbe66ac9f17af0e16836', '[\"*\"]', '2024-07-18 04:34:58', NULL, '2024-07-18 04:21:27', '2024-07-18 04:34:58');
+INSERT INTO `personal_access_tokens` VALUES (20, 'App\\Models\\User', 1, 'token', '0f5f1c5ea66ffd6af0e899bd765ef8ac6544d5e73ee8764bb0f9d66d326264f8', '[\"*\"]', '2024-07-18 09:18:58', NULL, '2024-07-18 07:24:07', '2024-07-18 09:18:58');
+INSERT INTO `personal_access_tokens` VALUES (21, 'App\\Models\\User', 1, 'token', 'bab17356684de4ca721cf3b10693601e4b11e6652e4d323240d300455278741f', '[\"*\"]', '2024-07-18 09:14:59', NULL, '2024-07-18 07:34:02', '2024-07-18 09:14:59');
+INSERT INTO `personal_access_tokens` VALUES (22, 'App\\Models\\User', 1, 'token', '4c0df8cb4f6ef4d16e9f3b186f539c66414d78359b24b2f426ef0e3db5884266', '[\"*\"]', '2024-07-19 04:08:51', NULL, '2024-07-19 02:09:10', '2024-07-19 04:08:51');
+INSERT INTO `personal_access_tokens` VALUES (23, 'App\\Models\\User', 1, 'token', 'd091ca7c9aba1ebc68fa8fbc91581acab80adf37e3ec0d6619e714fa0e0b2565', '[\"*\"]', '2024-07-19 04:29:43', NULL, '2024-07-19 03:01:33', '2024-07-19 04:29:43');
+INSERT INTO `personal_access_tokens` VALUES (24, 'App\\Models\\User', 1, 'token', 'f397bed87fd5d1b32dd07560d79bd0834dadefa83d39631d33289a95a1ce390e', '[\"*\"]', '2024-07-19 05:02:41', NULL, '2024-07-19 04:17:42', '2024-07-19 05:02:41');
+INSERT INTO `personal_access_tokens` VALUES (25, 'App\\Models\\User', 1, 'token', '3f34d969d43599b0fee664637d2e8a4512a00175609f90b4f55ae47ea7618b11', '[\"*\"]', '2024-07-19 08:51:07', NULL, '2024-07-19 06:53:36', '2024-07-19 08:51:07');
+INSERT INTO `personal_access_tokens` VALUES (26, 'App\\Models\\User', 1, 'token', 'ef79c255c42cd49333f6e2c5f0d7d7ec02398d9ab222051cdb47a9e45060670f', '[\"*\"]', '2024-07-19 10:08:58', NULL, '2024-07-19 08:56:15', '2024-07-19 10:08:58');
+INSERT INTO `personal_access_tokens` VALUES (27, 'App\\Models\\User', 1, 'token', '363bdd7356c91d84f1ab093eee6d5b17d7497e72f93d9fbb0f8ff863be7a0a9f', '[\"*\"]', '2024-07-19 09:40:54', NULL, '2024-07-19 09:30:05', '2024-07-19 09:40:54');
+INSERT INTO `personal_access_tokens` VALUES (28, 'App\\Models\\User', 1, 'token', '9dc2acabee41b358f8274f8741fcc3808d0ad6a2e2bbb942b1bc67e8269d5399', '[\"*\"]', '2024-07-22 02:37:29', NULL, '2024-07-22 02:28:57', '2024-07-22 02:37:29');
+INSERT INTO `personal_access_tokens` VALUES (29, 'App\\Models\\User', 1, 'token', '4d7024065082b9b89e959e487f4b0ed0b5eab405cdd71e01d72973f55e04b979', '[\"*\"]', '2024-07-22 04:34:19', NULL, '2024-07-22 02:54:04', '2024-07-22 04:34:19');
+INSERT INTO `personal_access_tokens` VALUES (30, 'App\\Models\\User', 1, 'token', '671abc6665ebc28540f1c29260280173281bfa576d4d823483533489e694dfa7', '[\"*\"]', '2024-07-29 03:54:08', NULL, '2024-07-29 02:48:16', '2024-07-29 03:54:08');
+INSERT INTO `personal_access_tokens` VALUES (31, 'App\\Models\\User', 1, 'token', '24516b30d114fe61580222c1a770e18d3e2c3e7865d2f00b22ab8e708741b710', '[\"*\"]', '2024-07-29 04:49:02', NULL, '2024-07-29 02:49:40', '2024-07-29 04:49:02');
+INSERT INTO `personal_access_tokens` VALUES (32, 'App\\Models\\User', 1, 'token', 'fb87fc8b6121ace2e8200fc247e7527e0b4dab780a1fb0318462a917afefe39e', '[\"*\"]', '2024-07-29 05:04:25', NULL, '2024-07-29 04:55:39', '2024-07-29 05:04:25');
+INSERT INTO `personal_access_tokens` VALUES (33, 'App\\Models\\User', 1, 'token', '0ac4078f334f8a857afe50c3ec6fca5f6ad41744ee06228ff9591a9e078201c2', '[\"*\"]', '2024-07-29 09:14:12', NULL, '2024-07-29 08:59:36', '2024-07-29 09:14:12');
+INSERT INTO `personal_access_tokens` VALUES (34, 'App\\Models\\User', 1, 'token', '7f8751b2d9d575da6fa8d3b62a135cfd8f770b791c2e918685a0230d0820c482', '[\"*\"]', '2024-08-06 02:53:19', NULL, '2024-08-06 02:44:56', '2024-08-06 02:53:19');
+INSERT INTO `personal_access_tokens` VALUES (35, 'App\\Models\\User', 1, 'token', '2b0137062dabe5e9e8991b18fc10b1030bb64ebc04e6a7545e291e5d98783d78', '[\"*\"]', '2024-08-23 04:03:37', NULL, '2024-08-23 02:51:27', '2024-08-23 04:03:37');
 
 -- ----------------------------
 -- Table structure for pos_register
@@ -1270,6 +1294,7 @@ INSERT INTO `role_has_permissions` VALUES (25, 1);
 INSERT INTO `role_has_permissions` VALUES (26, 1);
 INSERT INTO `role_has_permissions` VALUES (27, 1);
 INSERT INTO `role_has_permissions` VALUES (28, 1);
+INSERT INTO `role_has_permissions` VALUES (29, 1);
 
 -- ----------------------------
 -- Table structure for roles
@@ -1462,7 +1487,7 @@ CREATE TABLE `settings`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 67 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of settings
@@ -1502,7 +1527,25 @@ INSERT INTO `settings` VALUES (32, 'smtp_port', '2525', '2024-03-27 15:30:32', '
 INSERT INTO `settings` VALUES (33, 'smtp_username', 'test', '2024-03-27 15:30:32', '2024-03-27 15:30:32');
 INSERT INTO `settings` VALUES (34, 'smtp_password', 'test', '2024-03-27 15:30:32', '2024-03-27 15:30:32');
 INSERT INTO `settings` VALUES (35, 'smtp_Encryption', 'tls', '2024-03-27 15:30:32', '2024-03-27 15:30:32');
-INSERT INTO `settings` VALUES (36, 'logo', 'http://pos.local/uploads/settings\\1\\ichiban.jpg', '2024-03-27 15:30:32', '2024-07-11 09:31:14');
+INSERT INTO `settings` VALUES (36, 'logo', 'http://pos.local/uploads/settings\\3\\ichiban.jpg', '2024-03-27 15:30:32', '2024-07-19 07:25:08');
+INSERT INTO `settings` VALUES (49, 'show_note', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (50, 'show_phone', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (51, 'show_customer', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (52, 'show_address', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (53, 'show_email', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (54, 'show_warehouse', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (55, 'show_tax_discount_shipping', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (56, 'show_barcode_in_receipt', '1', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (57, 'notes', 'Thanks for order', '2024-07-17 08:14:19', '2024-07-17 08:14:19');
+INSERT INTO `settings` VALUES (58, 'show_note', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (59, 'show_phone', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (60, 'show_customer', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (61, 'show_address', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (62, 'show_email', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (63, 'show_warehouse', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (64, 'show_tax_discount_shipping', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (65, 'show_barcode_in_receipt', '1', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
+INSERT INTO `settings` VALUES (66, 'notes', 'Thanks for order', '2024-07-19 02:58:05', '2024-07-19 02:58:05');
 
 -- ----------------------------
 -- Table structure for sms_settings
@@ -5674,6 +5717,28 @@ INSERT INTO `states` VALUES (4120, 'Midlands', 246, NULL, NULL);
 INSERT INTO `states` VALUES (4121, 'Lienchiang County', 214, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for stores
+-- ----------------------------
+DROP TABLE IF EXISTS `stores`;
+CREATE TABLE `stores`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `stores_name_unique`(`name`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of stores
+-- ----------------------------
+INSERT INTO `stores` VALUES (4, 'BKK1', '095888248', '136 Street 51, Phnom Penh 12302', '11.551717046927013, 104.92663946066088', NULL, '2024-07-29 02:54:46', '2024-07-29 09:00:28');
+
+-- ----------------------------
 -- Table structure for suppliers
 -- ----------------------------
 DROP TABLE IF EXISTS `suppliers`;
@@ -5885,6 +5950,6 @@ CREATE TABLE `warehouses`  (
 -- ----------------------------
 -- Records of warehouses
 -- ----------------------------
-INSERT INTO `warehouses` VALUES (1, 'warehouse', '123456789', 'india', 'mumbai', 'warehouse1@infypos.com', '12345', '2024-03-27 15:30:32', '2024-03-27 15:30:32');
+INSERT INTO `warehouses` VALUES (1, 'warehouse', '123456789', 'india', 'mumbai', 'warehouse1@infypos.com', '12345', '2024-03-27 15:30:32', '2024-07-29 05:01:35');
 
 SET FOREIGN_KEY_CHECKS = 1;
