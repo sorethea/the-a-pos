@@ -36,15 +36,6 @@ services:
       - ./nginx/nginx.crt:/etc/ssl/certs/nginx.crt
     networks:
       - app-network
-  npm:
-      tty: true
-      build:
-          context: .
-          dockerfile: Dockerfile
-      container_name: npm
-      working_dir: /var/www
-      networks:
-          - app-network
   #MySQL Service
   db:
     image: mysql:5.7
