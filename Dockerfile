@@ -1,3 +1,8 @@
+FROM node:18.15.0
+
+#install nodejs
+RUN apt-get update && apt-get install -y nodejs npm
+
 FROM php:8.2-fpm
 
 # Copy composer.json
@@ -56,10 +61,3 @@ USER www
 EXPOSE 9000
 CMD ["php-fpm"]
 
-FROM node:18.15.0
-
-#install nodejs
-RUN apt-get update && apt-get install -y nodejs npm
-
-
-CMD ["tail", "-f", "/dev/null"]
