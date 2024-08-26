@@ -189,7 +189,7 @@ const Login = () => {
                             <div className="text-center">
                                 <button
                                     type="submit"
-                                    className="btn btn-primary w-100"
+                                    className="btn mb-2 btn-primary w-100"
                                     onClick={(e) => onLogin(e)}
                                 >
                                     {loading ? (
@@ -208,7 +208,7 @@ const Login = () => {
                                 </button>
                                 <Link
                                     to="#"
-                                    className="link-info mt-2 fs-6 text-decoration-none"
+                                    className="link-info fs-6 text-decoration-none"
                                 >
                                     {getFormattedMessage(
                                         "login-form.register.label"
