@@ -1,5 +1,8 @@
 FROM node:18.15.0
-
+WORKDIR /var/www
+COPY ./src/package.json .
+RUN npm install
+RUN npm clean-install
 FROM php:8.2-fpm
 
 # Copy composer.json
