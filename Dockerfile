@@ -1,8 +1,3 @@
-FROM node:18.15.0
-
-#install nodejs
-RUN apt-get update && apt-get install -y nodejs npm
-
 FROM php:8.2-fpm
 
 # Copy composer.json
@@ -38,8 +33,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath intl
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
-
-RUN npm install -g npm@9.5.0
+#install nodejs
+RUN apt-get update && apt-get install -y nodejs@18.15.0 npm@9.5.0
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
