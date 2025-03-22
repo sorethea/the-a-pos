@@ -112,7 +112,7 @@ const ThisWeekSalePurchaseChart = (props) => {
             {
                 label: placeholderText("sales.title"),
                 data: weekSalePurchase ? weekSalePurchase.sales : "",
-                backgroundColor: "#6571FF",
+                backgroundColor: "#ff6591",
             },
             {
                 label: placeholderText("purchases.title"),
